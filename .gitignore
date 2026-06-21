@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.env
+server/.env
+client/.env
+node_modules/
+client/node_modules/
+dist/
+dist-ssr/
+.DS_Store
+*.log
