@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 from config.db import db
 from routes.auth import router as auth_router
 from routes.pdf import router as pdf_router
+from routes.query import router as query_router
 from middleware.auth import verify_token
 
 print("MongoDB connected:", db.name)
@@ -22,6 +23,7 @@ app.add_middleware(
 
 app.include_router(auth_router, prefix='/api/auth')
 app.include_router(pdf_router, prefix='/api/pdf')
+app.include_router(query_router, prefix='/api/query')
 
 @app.get("/")
 def root():
