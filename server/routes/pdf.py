@@ -21,7 +21,6 @@ async def upload(file: UploadFile, user_id: str = Depends(verify_token)):
     for page in doc:
         text += page.get_text()
     chunks = text_splitter.split_text(text)
-    print(f"Created {len(chunks)} chunks")
     collection = client.get_or_create_collection(
         name=f'user_{user_id}'
     )
@@ -30,6 +29,5 @@ async def upload(file: UploadFile, user_id: str = Depends(verify_token)):
         ids=ids,
         documents=chunks,
     )
-    print('success')
-
+   
 
