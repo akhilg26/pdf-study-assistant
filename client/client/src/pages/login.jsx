@@ -1,5 +1,30 @@
+import { useState } from 'react'
+import { useNavigate } from 'react-router'
+import { login } from '../api/auth'
+
 function Login(){
-    return <div>Login</div>
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+    async function handleSubmit(e){
+        e.preventDefault()
+        const response = await login(username, password)
+        const token = response.data.token
+        localStorage.setItem('token', token)
+        const id = response.data.id
+        localStorage.setItem('id', id)
+        navigate('/upload')
+
+    }
+    return <div>
+        <form onSubmit={handleSubmit}>
+            <label htmlFor='username'>Username: </label>
+            <input id='username' name='username' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}></input> <br />
+            <label htmlFor='password'>Password: </label>
+            <input type='password' id='password' name='password' placeholder='abcd1234' value={password} onChange={(e) => setPassword(e.target.value)}></input> <br />
+            <button>Login</button>
+        </form>
+    </div>
 }
 
 export default Login

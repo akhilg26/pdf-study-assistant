@@ -18,4 +18,20 @@ async function register(username, password){
 
 }
 
-export default register
+async function login(username, password){
+    const payload = {
+        'username': username,
+        'password' : password
+    }
+
+    try {
+        const response = await axios.post('http://localhost:8000/api/auth/login', payload)
+        console.log("Success: ", response)
+        return response
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+export {register, login}
