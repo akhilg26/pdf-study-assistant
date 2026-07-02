@@ -12,7 +12,7 @@ async function queryPDF(question, token){
 }
     catch (error) {
         console.log(error)
-        return {'message' : 'query failure'}
+        return { message: 'query failure', error: error.response?.data?.detail || 'Something went wrong' }
     }
 }
 
