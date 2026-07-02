@@ -29,5 +29,7 @@ async def upload(file: UploadFile, user_id: str = Depends(verify_token)):
         ids=ids,
         documents=chunks,
     )
+
+    
    
 
