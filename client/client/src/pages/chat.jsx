@@ -7,14 +7,17 @@ function Chat(){
     const navigate = useNavigate()
     const [query, setQuery] = useState('')
     const [response, setResponse] = useState('')
+    const [loading, setLoading] = useState(false)
     async function handleSubmit(e){
         e.preventDefault()
+        setLoading(true)
         const result = await queryPDF(query, token)
         if (!result.response){
             setResponse(`Error: ${result.error}`)
         } else{
         setResponse(result.response.data.response)
         }
+        setLoading(false)
     }
 
     return <div>
@@ -26,8 +29,8 @@ function Chat(){
             <input id='query' name='query' placeholder='Start typing your question' value={query} onChange={(e) => setQuery(e.target.value)}></input> <br />
             <button>Submit question</button>
         </form>
+        <div style={{textAlign: 'center'}}>{loading && 'Thinking...'}</div>
         {response && <div>{response}</div>}
-        
         <div style={{textAlign: 'center', marginTop: '10px'}}><button onClick={() => navigate('/upload')}>Upload</button></div>
     </div>
 
