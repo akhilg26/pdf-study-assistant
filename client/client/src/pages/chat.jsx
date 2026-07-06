@@ -27,11 +27,12 @@ function Chat(){
         <form onSubmit={handleSubmit}>
             <label htmlFor='query'>Query: </label>
             <input id='query' name='query' placeholder='Start typing your question' value={query} onChange={(e) => setQuery(e.target.value)}></input> <br />
-            <button>Submit question</button>
+            <button disabled={loading}>Submit question</button>
         </form>
-        <div style={{textAlign: 'center'}}>{loading && 'Thinking...'}</div>
+        {loading && <div className='spinner'></div>}
         {response && <div>{response}</div>}
-        <div style={{textAlign: 'center', marginTop: '10px'}}><button onClick={() => navigate('/upload')}>Upload</button></div>
+
+        <div style={{textAlign: 'center', marginTop: '10px'}}><button onClick={() => navigate('/upload')}>Upload your notes</button></div>
     </div>
 
 

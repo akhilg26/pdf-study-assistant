@@ -29,7 +29,10 @@ function Register(){
             <input type='password' id='password' name='password' placeholder='abcd1234' value={password} onChange={(e) => setPassword(e.target.value)}></input> <br />
             <button>Register</button>
         </form>
-        
+        <div className='page-title'>
+            <p style={{marginTop: '20px'}}>Already have an account?</p> <br />
+            <button onChange={() => navigate('/login')}>Login</button>
+        </div>
     </div>
 }
 

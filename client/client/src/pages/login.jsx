@@ -28,6 +28,10 @@ function Login(){
             <input type='password' id='password' name='password' placeholder='abcd1234' value={password} onChange={(e) => setPassword(e.target.value)}></input> <br />
             <button>Login</button>
         </form>
+        <div className='page-title'>
+            <p style={{marginTop: '20px'}}>Don't have an account?</p> <br />
+            <button onChange={() => navigate('/register')}>Register</button>
+        </div>
     </div>
 }
 
