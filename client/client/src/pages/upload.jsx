@@ -28,13 +28,17 @@ function Upload(){
 
     }
     return <div>
+        <div className='page-title'>
+    <h1>Upload your notes!</h1>
+    <p>Upload a pdf of your notes to your personanl study assistant!</p>
+        </div>  
         <form onSubmit={handleSubmit}>
             <label htmlFor='file'>File: </label>
             <input id='file' type='file' onChange={(e) => setFiles(e.target.files)}></input> <br />
-            <button disabled={loading}>{loading ? 'Uploading...' :'Upload File'}</button> <br /> 
+            <div style={{textAlign: 'center'}}><button disabled={loading}>{loading ? 'Uploading...' :'Upload File'}</button> </div><br /> 
         </form>
-        <div>{status}</div> 
-        <button onClick={() => navigate('/chat')}>Go to Chat</button>
+        <div style={{textAlign: 'center', marginTop: '10px'}}>{status}</div> 
+        <div style={{textAlign: 'center', marginTop: '10px'}}><button onClick={() => navigate('/chat')}>Go to Chat</button></div>
     </div>
 }
 

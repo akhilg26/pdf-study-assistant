@@ -18,14 +18,17 @@ function Chat(){
     }
 
     return <div>
+        <div className='page-title'>
+    <h1>Study with your personal assistant!</h1>
+    <p>Ask any questions you would like!</p></div>
         <form onSubmit={handleSubmit}>
             <label htmlFor='query'>Query: </label>
             <input id='query' name='query' placeholder='Start typing your question' value={query} onChange={(e) => setQuery(e.target.value)}></input> <br />
             <button>Submit question</button>
         </form>
         {response && <div>{response}</div>}
-        <button onClick={() => navigate('/login')}>Login</button>
-        <button onClick={() => navigate('/upload')}>Upload</button>
+        
+        <div style={{textAlign: 'center', marginTop: '10px'}}><button onClick={() => navigate('/upload')}>Upload</button></div>
     </div>
 
 

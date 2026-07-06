@@ -17,6 +17,10 @@ function Login(){
 
     }
     return <div>
+        <div className='page-title'>
+    <h1>Login!</h1>
+    <p>Login to your account to study with your personal assistant!</p>
+        </div>  
         <form onSubmit={handleSubmit}>
             <label htmlFor='username'>Username: </label>
             <input id='username' name='username' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}></input> <br />

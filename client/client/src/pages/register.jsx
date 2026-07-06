@@ -18,6 +18,10 @@ function Register(){
         navigate('/upload')
     }
     return <div>
+        <div className='page-title'>
+    <h1>Get Started!</h1>
+    <p>Create an account to begin studying smarter with your personal assistant!</p>
+        </div>  
         <form onSubmit={handleSubmit}>
             <label htmlFor='username'>Username: </label>
             <input id='username' name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}></input><br />

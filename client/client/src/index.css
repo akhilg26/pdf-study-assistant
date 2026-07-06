@@ -123,7 +123,7 @@ button.secondary {
 
 form {
   background: var(--card);
-  padding: 40px;
+  padding: 24px;
   border-radius: 20px;
   border: 1.5px solid var(--border);
   max-width: 480px;
