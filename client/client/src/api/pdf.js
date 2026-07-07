@@ -5,7 +5,7 @@ async function uploadPDF(file, token){
     formData.append('file', file)
     console.log(formData) // delete later
     try {
-        const response = await axios.post('http://localhost:8000/api/pdf/upload', formData, {headers: {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/pdf/upload`, formData, {headers: {
             'Authorization' : `Bearer ${token}`
         }})
         console.log(response)

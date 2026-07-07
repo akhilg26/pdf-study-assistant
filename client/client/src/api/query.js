@@ -5,7 +5,7 @@ async function queryPDF(question, token){
         'query' : question
     }
     try {
-        const response = await axios.post('http://localhost:8000/api/query/', payload, {headers: {
+        const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/query/`, payload, {headers: {
         'Authorization': `Bearer ${token}`
     }})
     return {'message': 'query success', 'response' : response}
