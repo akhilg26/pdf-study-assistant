@@ -30,7 +30,7 @@ function Upload(){
     return <div>
         <div className='page-title'>
     <h1>Upload your notes!</h1>
-    <p>Upload a pdf of your notes to your personanl study assistant!</p>
+    <p>Upload a pdf of your notes to your personal study assistant!</p>
         </div>  
         <form onSubmit={handleSubmit}>
             <label htmlFor='file'>File: </label>
