@@ -23,14 +23,14 @@ function Login(){
         </div>  
         <form onSubmit={handleSubmit}>
             <label htmlFor='username'>Username: </label>
-            <input id='username' name='username' placeholder='Username' value={username} onChange={(e) => setUsername(e.target.value)}></input> <br />
+            <input id='username' name='username' placeholder='username' value={username} onChange={(e) => setUsername(e.target.value)}></input> <br />
             <label htmlFor='password'>Password: </label>
             <input type='password' id='password' name='password' placeholder='abcd1234' value={password} onChange={(e) => setPassword(e.target.value)}></input> <br />
             <button>Login</button>
         </form>
         <div className='page-title'>
             <p style={{marginTop: '20px'}}>Don't have an account?</p> <br />
-            <button onChange={() => navigate('/register')}>Register</button>
+            <button onClick={() => navigate('/register')}>Register</button>
         </div>
     </div>
 }

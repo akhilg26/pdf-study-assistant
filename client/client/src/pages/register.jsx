@@ -31,7 +31,7 @@ function Register(){
         </form>
         <div className='page-title'>
             <p style={{marginTop: '20px'}}>Already have an account?</p> <br />
-            <button onChange={() => navigate('/login')}>Login</button>
+            <button onClick={() => navigate('/login')}>Login</button>
         </div>
     </div>
 }
