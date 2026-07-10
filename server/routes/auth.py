@@ -6,6 +6,8 @@ import os
 import datetime
 from dotenv import load_dotenv
 from config.db import db
+from datetime import datetime
+from datetime import timedelta
 
 load_dotenv()
 
@@ -26,7 +28,9 @@ def register(user: User):
     hashed_pw = bcrypt.hashpw(user.password.encode('utf-8'), salt)
     db_user = db["users"].insert_one({
         'username': user.username,
-        'password': hashed_pw
+        'password': hashed_pw,
+        'query_count': 0,
+        'query_reset_date': datetime.now() + timedelta(days=7)
     })
 
     token = jwt.encode({'id' : str(db_user.inserted_id)}, jwt_secret, 'HS256')
